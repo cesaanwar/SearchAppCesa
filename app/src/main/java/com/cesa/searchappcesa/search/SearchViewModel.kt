@@ -1,13 +1,12 @@
 package com.cesa.searchappcesa.search
 
 import androidx.lifecycle.*
-import com.cesa.searchappcesa.data.DefaultSearchRepository
 import com.cesa.searchappcesa.data.Result
-import kotlinx.coroutines.Dispatchers
+import com.cesa.searchappcesa.data.SearchRepository
 import javax.inject.Inject
 
 class SearchViewModel @Inject constructor(
-    private val repository: DefaultSearchRepository
+    private val repository: SearchRepository
 ): ViewModel() {
 
     private val _query = MutableLiveData<String>()

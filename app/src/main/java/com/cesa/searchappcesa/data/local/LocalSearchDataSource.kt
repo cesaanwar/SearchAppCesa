@@ -5,7 +5,9 @@ import com.cesa.searchappcesa.search.Product
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class LocalSearchDataSource @Inject constructor(
     private val database: ProductDatabase
 ) : SearchDataSource {
