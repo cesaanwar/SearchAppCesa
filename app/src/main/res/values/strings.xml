@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Search App Cesa</string>
+    <string name="search_err_msg">Kendala koneksi, menampilkan data cache</string>
+</resources>
