@@ -5,7 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.22735507246376813" />
+        <entry key="app/src/main/res/layout/fragment_shop_list.xml" value="0.22735507246376813" />
         <entry key="app/src/main/res/layout/item_search_layout.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/item_search_shop.xml" value="0.22735507246376813" />
+        <entry key="app/src/main/res/layout/item_shop_product_preview.xml" value="0.22735507246376813" />
       </map>
     </option>
   </component>

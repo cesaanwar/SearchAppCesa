@@ -1,15 +1,15 @@
-package com.cesa.searchappcesa.search
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+package com.cesa.searchappcesa.domain.response
+
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 
-data class Products(
+data class ProductsResponse(
     @SerializedName("data")
-    val data: Data
+    val data: ProductData
 )
 
-data class Data(
+data class ProductData(
     @SerializedName("searchProduct")
     val searchProduct: SearchProduct
 )
@@ -19,9 +19,7 @@ data class SearchProduct(
     val products: List<Product>
 )
 
-@Entity(tableName = "products")
 data class Product(
-    @PrimaryKey
     @SerializedName("id")
     val productId: Long,
     @SerializedName("name")
@@ -34,8 +32,4 @@ data class Product(
     val ratingAverage: String,
     @SerializedName("image_url")
     val productImage: String
-) {
-   fun getFormattedRating(): String {
-       return ratingAverage
-   }
-}
+)

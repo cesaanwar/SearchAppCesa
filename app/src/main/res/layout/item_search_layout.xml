@@ -6,7 +6,7 @@
     <data>
         <variable
             name="product"
-            type="com.cesa.searchappcesa.search.Product" />
+            type="com.cesa.searchappcesa.search.products.ProductUIModel" />
     </data>
 
     <LinearLayout

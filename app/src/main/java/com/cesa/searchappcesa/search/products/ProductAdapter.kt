@@ -1,7 +1,6 @@
-package com.cesa.searchappcesa.search
+package com.cesa.searchappcesa.search.products
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cesa.searchappcesa.R
 import com.cesa.searchappcesa.databinding.ItemSearchLayoutBinding
+import com.cesa.searchappcesa.search.SearchViewModel
 
-class ProductAdapter(private val viewModel: SearchViewModel): ListAdapter<Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
+class ProductAdapter(private val viewModel: SearchViewModel): ListAdapter<ProductUIModel, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 
     class ProductViewHolder(val itemBinding: ItemSearchLayoutBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         companion object {
@@ -33,16 +33,17 @@ class ProductAdapter(private val viewModel: SearchViewModel): ListAdapter<Produc
             .load(product.productImage)
             .placeholder(R.drawable.ic_placeholder)
             .into(holder.itemBinding.ivProduct)
+        holder.itemBinding.executePendingBindings()
     }
 
 }
 
-class ProductDiffCallback: DiffUtil.ItemCallback<Product>() {
-    override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
+class ProductDiffCallback: DiffUtil.ItemCallback<ProductUIModel>() {
+    override fun areItemsTheSame(oldItem: ProductUIModel, newItem: ProductUIModel): Boolean {
         return oldItem.productId == newItem.productId
     }
 
-    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-        return oldItem == newItem
+    override fun areContentsTheSame(oldItem: ProductUIModel, newItem: ProductUIModel): Boolean {
+        return oldItem.productId == newItem.productId
     }
 }
